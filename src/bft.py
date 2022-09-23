@@ -20,18 +20,20 @@ def bf_order(t: T | None) -> Iterable[int]:
 
     # append values to res list until the stack is empty
     res = []
-    queue.append(t)
 
-    while True:
-        if len(queue) > 0:
-            t = queue.popleft()
-            res.append(t.val)
-        else:
-            break
-        if t.left:
-            queue.append(t.left)
-        if t.right:
-            queue.append(t.right)
+    if t != None:
+        queue.append(t)
+        
+        while True:
+            if len(queue) > 0:
+                t = queue.popleft()
+                res.append(t.val)
+            else:
+                break
+            if t.left:
+                queue.append(t.left)
+            if t.right:
+                queue.append(t.right)
 
     return res
 
