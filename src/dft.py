@@ -15,21 +15,12 @@ def in_order(t: T | None) -> Iterable[int]:
 
     # # recursive
     # if t == None:
-    #     return # return something?
+    #     return
     # else:
     #     return [in_order(t.left), t.val, in_order(t.right)]
     
-    
     stack = deque() # make right size?
-    
-    # t2 = t.right
-
-    # while t != None:
-    #     stack.append(deque().append(t.left, t.val, t.right))
-    # while t2.right != None:
-    #     pass
-
-    res = []
+    res = deque()
     # append values to res list until the stack is empty
     while True:
         while t != None:
@@ -43,3 +34,11 @@ def in_order(t: T | None) -> Iterable[int]:
             break
 
     return res
+
+
+# def main():
+#     tree = T(2, T(1, None, None), T(4, T(3, None, None), T(5, None, None)))
+#     print(list(in_order(tree)))
+
+# if __name__ == '__main__':
+#     main()
