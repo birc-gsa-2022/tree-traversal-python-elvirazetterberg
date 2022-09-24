@@ -15,21 +15,14 @@ def bf_order(t: T | None) -> Iterable[int]:
 
     queue = deque()
 
-
-    # end when all leaves to the right are None.
-
-    # append values to res list until the stack is empty
-    res = []
+    res = deque()
 
     if t != None:
         queue.append(t)
-        
-        while True:
-            if len(queue) > 0:
-                t = queue.popleft()
-                res.append(t.val)
-            else:
-                break
+
+        while queue:
+            t = queue.popleft()
+            res.append(t.val)
             if t.left:
                 queue.append(t.left)
             if t.right:

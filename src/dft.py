@@ -19,7 +19,7 @@ def in_order(t: T | None) -> Iterable[int]:
     # else:
     #     return [in_order(t.left), t.val, in_order(t.right)]
     
-    stack = deque() # make right size?
+    stack = deque()
     res = deque()
     # append values to res list until the stack is empty
     while True:
