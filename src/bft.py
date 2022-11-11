@@ -13,22 +13,20 @@ def bf_order(t: T | None) -> Iterable[int]:
     [2, 1, 4, 3, 5]
     """
 
-    queue = deque()
-
-    res = deque()
+    queue = deque()                     # fifo
 
     if t != None:
-        queue.append(t)
+        queue.append(t)                 # [t]
 
         while queue:
-            t = queue.popleft()
-            res.append(t.val)
-            if t.left:
-                queue.append(t.left)
+            t = queue.popleft()         # [] remove t
+            yield t.val                 # take value (node)
+            if t.left:                  # if left child
+                queue.append(t.left)    # add left child to queue
             if t.right:
-                queue.append(t.right)
+                queue.append(t.right)   # add right child to queue
 
-    return res
+
 
     
 # def main():
